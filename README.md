@@ -1,0 +1,2 @@
+# autoAutodock
+sequential docking + GUI

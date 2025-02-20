@@ -10,8 +10,10 @@ def main():
 
     prots_label = tk.Label(text='proteins')
     prots = tk.Entry()
+    proteins = prots.get()
     ligs_label = tk.Label(text='ligands')
     ligs = tk.Entry()
+    ligands = ligs.get()
     prots_label.pack()
     prots.pack()
     ligs_label.pack()

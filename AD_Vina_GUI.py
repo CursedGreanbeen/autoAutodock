@@ -47,10 +47,12 @@ def main():
 
     auto_list = tk.Label(text='or gather names automatically:')
     auto_list.pack()
-    butt_names = tk.Button(text='Make a list of names', command=list_files.list_names(path))
+    butt_names = tk.Button(text='Make a list of names')
+    # command=list_files.list_names(path))
     butt_names.pack()
 
-    butt_dock = tk.Button(text='Dock!', command=real_auto_dock.auto_autodock(proteins, ligands))
+    butt_dock = tk.Button(text='Dock!') 
+    # command=real_auto_dock.auto_autodock(proteins, ligands))
     butt_dock.pack()
     window.mainloop()
 

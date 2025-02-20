@@ -47,6 +47,15 @@ def main():
 
     auto_list = tk.Label(text='or gather names automatically:')
     auto_list.pack()
+
+    def names():
+        proteins = list_files.list_names()[0]
+        ligands = list_files.list_names()[1]
+        list_of_prots = tk.Label(text=proteins)
+        list_of_ligs = tk.Label(text=ligands)
+        list_of_prots.pack()
+        list_of_ligs.pack()
+            
     butt_names = tk.Button(text='Make a list of names', command=list_files.list_names(path))
     butt_names.pack()
 

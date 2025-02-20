@@ -4,6 +4,7 @@ import list_files
 
 
 def main():
+    proteins, ligands = [], []
     window = tk.Tk()
     greet = tk.Label(text='Enter proteins and ligands')
     greet.pack()
@@ -14,15 +15,16 @@ def main():
     ligs_entry = tk.Entry()
     prots_label.pack()
     prots_entry.pack()
-    proteins = prots_entry.get()
+    proteins.append(p for p in prots_entry.get().split())
     ligs_label.pack()
     ligs_entry.pack()
-    ligands = ligs_entry.get()
+    ligands.append(l for l in ligss_entry.get().split())
 
     auto_list = tk.Label(text='or gather names automatically:')
     auto_list.pack()
 
     def names():
+        global proteins, ligands
         proteins = list_files.list_names()[0]
         ligands = list_files.list_names()[1]
         list_of_prots = tk.Label(text=proteins)
@@ -33,7 +35,10 @@ def main():
     butt_names = tk.Button(text='Make a list of names', command=names)
     butt_names.pack()
 
-    dock = real_auto_dock.auto_autodock
+    def dock():
+        if proteins and ligands: 
+            real_auto_dock.auto_autodock(proteins, ligands)
+    
     butt_dock = tk.Button(text='Dock!', command=dock)
     butt_dock.pack()
     

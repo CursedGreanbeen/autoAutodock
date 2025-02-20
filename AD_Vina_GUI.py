@@ -5,19 +5,19 @@ import list_files
 
 def main():
     window = tk.Tk()
-    greet = tk.Label(text='Enter prots and ligs')
+    greet = tk.Label(text='Enter proteins and ligands')
     greet.pack()
 
     prots_label = tk.Label(text='proteins')
-    prots = tk.Entry()
-    proteins = prots.get()
+    prots_entry = tk.Entry()
     ligs_label = tk.Label(text='ligands')
-    ligs = tk.Entry()
-    ligands = ligs.get()
+    ligs_entry = tk.Entry()
     prots_label.pack()
-    prots.pack()
+    prots_entry.pack()
+    proteins = prots_entry.get()
     ligs_label.pack()
-    ligs.pack()
+    ligs_entry.pack()
+    ligands = ligs_entry.get()
 
     auto_list = tk.Label(text='or gather names automatically:')
     auto_list.pack()

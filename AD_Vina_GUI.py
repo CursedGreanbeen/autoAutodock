@@ -1,10 +1,25 @@
 import tkinter as tk
-import real_auto_dock
-import list_files
+from real_auto_dock import auto_autodock
+from list_files import list_names
 
 
 def main():
-    proteins, ligands = [], []
+    proteins = []
+    ligands = []
+
+    def names():
+        nonlocal proteins, ligands
+        proteins, ligands = list_names(proteins, ligands)
+        list_of_prots = tk.Label(text=proteins)
+        list_of_ligs = tk.Label(text=ligands)
+        list_of_prots.pack()
+        list_of_ligs.pack()
+
+    def dock():
+        nonlocal proteins, ligands
+        if proteins and ligands:
+            auto_autodock(proteins, ligands)
+
     window = tk.Tk()
     greet = tk.Label(text='Enter proteins and ligands')
     greet.pack()
@@ -13,36 +28,42 @@ def main():
     prots_entry = tk.Entry()
     ligs_label = tk.Label(text='ligands')
     ligs_entry = tk.Entry()
+
     prots_label.pack()
     prots_entry.pack()
-    proteins.append(p for p in prots_entry.get().split())
     ligs_label.pack()
     ligs_entry.pack()
-    ligands.append(l for l in ligss_entry.get().split())
+
+    def entries():
+        nonlocal proteins, ligands
+
+        for p in prots_entry.get().split():
+            proteins.append(p)
+        for l in ligs_entry.get().split():
+            ligands.append(l)
+
+        prots_entry.delete(0, tk.END)
+        ligs_entry.delete(0, tk.END)
+
+        # Для проверки вы можете вывести текущие значения в консоль
+        print("Proteins:", proteins)
+        print("Ligands:", ligands)
+
+    # Кнопка для добавления введенных данных
+    submit_button = tk.Button(text='Submit', command=entries)
+    submit_button.pack()
 
     auto_list = tk.Label(text='or gather names automatically:')
     auto_list.pack()
 
-    def names():
-        global proteins, ligands
-        proteins = list_files.list_names()[0]
-        ligands = list_files.list_names()[1]
-        list_of_prots = tk.Label(text=proteins)
-        list_of_ligs = tk.Label(text=ligands)
-        list_of_prots.pack()
-        list_of_ligs.pack()
-
     butt_names = tk.Button(text='Make a list of names', command=names)
     butt_names.pack()
 
-    def dock():
-        if proteins and ligands: 
-            real_auto_dock.auto_autodock(proteins, ligands)
-    
     butt_dock = tk.Button(text='Dock!', command=dock)
     butt_dock.pack()
-    
+
     window.mainloop()
+    print(proteins, ligands)
 
 
 if __name__ == "__main__":

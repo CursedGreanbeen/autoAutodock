@@ -1,10 +1,8 @@
 import os
 
 
-def list_names(path):
-    path = r'C:\Users\Nadezhda\OneDrive\Рабочий стол\Dock'
+def list_names(proteins, ligands, path=r'C:\Users\Nadezhda\OneDrive\Рабочий стол\Dock'):
     list_dir = os.listdir(path)
-    proteins, ligands = [], []
 
     for file in list_dir:
         if '_clean.pdbqt' in file:
@@ -13,9 +11,3 @@ def list_names(path):
             ligands.append(file[:-6])
 
     return proteins, ligands
-
-
-# proteins = [prot[:-12] for prot in dir_list if '_clean.pdbqt' in prot]
-# ligands = [lig[:-6] for lig in dir_list if ('.pdbqt' in lig and 'clean' not in lig)]
-
-# print(*proteins, *ligands)

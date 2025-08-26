@@ -1,10 +1,11 @@
 import os
 # import subprocess
 
+# proteins = ['7txt', '8dpf', '8hff', '8v6u', '9cbl']
+# ligands = ['sulfon', 'tietan']
+
 
 def auto_autodock(proteins, ligands):
-    proteins = ['7txt', '8dpf', '8hff', '8v6u', '9cbl']
-    ligands = ['sulfon', 'tietan']
     path = r'cd "C:\Users\Nadezhda\OneDrive\Desktop\Dock"'
     os.system(path)
 
@@ -19,5 +20,4 @@ def auto_autodock(proteins, ligands):
                     for i in range(26):
                         log.readline()
                     res.write(f'{prot} {lig} {log.readline()}')
-            res.write('______________________\n')
-
+            res.write('_______________________________________\n')

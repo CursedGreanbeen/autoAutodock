@@ -18,11 +18,13 @@ def collect_res(proteins, ligands, path=None):
             res.write('_______________________________________\n')
 
 
-def list_names(proteins, ligands, path=None):
+def list_names(path=None):
     if not path:
         path = os.getcwd()
 
     list_dir = os.listdir(path)
+    proteins, ligands = [], []
+
     for file in list_dir:
         if '_clean.pdbqt' in file:
             proteins.append(file[:-12])
@@ -34,5 +36,3 @@ def list_names(proteins, ligands, path=None):
 
 # proteins = [prot[:-12] for prot in dir_list if '_clean.pdbqt' in prot]
 # ligands = [lig[:-6] for lig in dir_list if ('.pdbqt' in lig and 'clean' not in lig)]
-
-# print(*proteins, *ligands)

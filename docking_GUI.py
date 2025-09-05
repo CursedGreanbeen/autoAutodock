@@ -3,12 +3,12 @@ from docking_controller import collect_res, list_names
 
 
 def main():
-    proteins = []
-    ligands = []
+    proteins, ligands = [], []
 
     def names():
         nonlocal proteins, ligands
-        proteins, ligands = list_names(proteins, ligands)
+
+        proteins, ligands = list_names()
         list_of_prots = tk.Label(text=proteins)
         list_of_ligs = tk.Label(text=ligands)
         list_of_prots.pack()
@@ -16,6 +16,7 @@ def main():
 
     def dock():
         nonlocal proteins, ligands
+
         if proteins and ligands:
             collect_res(proteins, ligands)
             proteins, ligands = [], []
@@ -24,11 +25,15 @@ def main():
     greet = tk.Label(text='Enter proteins and ligands')
     greet.pack()
 
+    path_label = tk.Label(text='path')
+    path_entry = tk.Entry()
     prots_label = tk.Label(text='proteins')
     prots_entry = tk.Entry()
     ligs_label = tk.Label(text='ligands')
     ligs_entry = tk.Entry()
 
+    path_label.pack()
+    path_entry.pack()
     prots_label.pack()
     prots_entry.pack()
     ligs_label.pack()

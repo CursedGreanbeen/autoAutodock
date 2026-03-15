@@ -1,0 +1,17 @@
+3PBL_ready G78 ERROR
+8I3V_ready G78 ERROR
+8IRT_ready G78 ERROR
+8pjk_ready G78 ERROR
+8Y2D_ready G78 ERROR
+3PBL_ready G78 ERROR
+3PBL_ready G78 ERROR
+3PBL_ready G78 ERROR
+3PBL_ready G78 ERROR
+3PBL_ready G78 3PBL_ready G78 3PBL_ready G78 Grid space : 0.375
+3PBL_ready G78    2           -5      5.505      8.623
+3PBL_ready G78    1        -5.47          0          0
+3PBL_ready G78    1       -5.487          0          0
+8I3V_ready G78    1       -5.718          0          0
+8IRT_ready G78    1       -5.381          0          0
+8pjk_ready G78    1        -5.19          0          0
+8Y2D_ready G78    1       -5.505          0          0

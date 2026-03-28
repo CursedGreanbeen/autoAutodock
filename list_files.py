@@ -1,7 +1,7 @@
 import os
 
 
-def list_names(proteins, ligands, path=r'C:\Users\Nadezhda\OneDrive\Рабочий стол\Dock'):
+def list_names(proteins, ligands, path=r'your path to the docking dir'):
 
     list_dir = os.listdir(path)
     for file in list_dir:

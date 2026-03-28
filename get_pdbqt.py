@@ -36,7 +36,7 @@ def generate_and_optimize(input_sdf, output_dir="pdbqts"):
         return None
 
 
-path = os.listdir(r'C:\Users\Nadezhda\OneDrive\Рабочий стол\Dock')
+path = os.listdir(r'path to your docking dir')
 for file in path:
     if '.sdf' in file:
         result = generate_and_optimize(file)

@@ -12,7 +12,7 @@ def replace_line(file_name, line_num, text):
 
 
 def auto_autodock(proteins, ligands, dock_type):
-    path = r'cd "C:\Users\Nadezhda\OneDrive\Desktop\Dock"'
+    path = r'cd "your path to the docking dir"'
     os.system(path)
 
     with open('total_nrg.txt', 'w+', encoding='utf-8') as res:
